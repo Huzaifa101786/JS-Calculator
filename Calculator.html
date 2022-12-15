@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>  
+</head>
+<style>
+ .button {
+  background-color: #f5a209;
+  border: none;
+  color: white;
+  width: 83px;
+  padding: 15px 30px;
+  text-align: center;
+  margin-top: 15px;
+  margin-right: 3px;
+  font-size: 35px;
+  border-radius: 35%;
+
+}
+.button:hover {
+
+background-color: #e4701e;
+
+}
+
+#btnx{
+    padding: 12px 111px;
+    border: none;
+    background-color: #b82525fd;
+    font-size: 25px;
+    margin-top: 15px;
+    color : white;
+    border-radius: 20px;
+    
+}
+#btnx:hover {
+
+background-color: #930c00;
+
+
+}
+
+#input{
+    background-color: #a0a0a0;
+    color: rgb(0, 0, 0);
+    font-size: 28.9px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 34px 0px;
+    text-align: center;
+}
+#op{
+    background-color: #828281;
+}
+#op:hover {
+
+background-color: #545353;
+
+}
+
+.clear{
+    align-items: center;
+}
+#main{
+    
+    background-color: #f2f2f2;
+    
+    
+    border-radius: 20px;
+    margin: auto;
+    width: 370px;
+    border: 3px solid rgb(34, 34, 34);
+    padding: 10px;
+
+}
+
+
+</style>
+
+
+<body style="text-align: center">
+<div id = "main">
+    <h1 style = "text-align: center;">Calculator</h1>
+   
+
+    <table class="table" align="center">
+        <tbody>
+            
+                <input type="text" id ="input" onkeydown="return false"></input>
+            
+            
+          <tr>
+            <td><input type="button" value="9" onclick="dis('9')"  class ="button"></td>
+            <td><input type="button" value="8" onclick="dis('8')"  class ="button"></td>
+            <td><input type="button" value="7" onclick="dis('7')"  class ="button"></td>
+            <td><input type="button" value="+" onclick="dis('+')" id = 'op'  class ="button"></td>
+          </tr>
+        
+        
+          <tr>
+            <td><input type="button" value="6" onclick="dis('6')" class ="button"></td>
+            <td><input type="button" value="5" onclick="dis('5')" class ="button"></td>
+            <td><input type="button" value="4" onclick="dis('4')" class ="button"></td>
+            <td><input type="button" value="-" onclick="dis('-')" id = 'op' class ="button"></td>
+          </tr>
+          <tr>
+            <td><input type="button" value="3" onclick="dis('3')" class ="button"></td>
+            <td><input type="button" value="2" onclick="dis('2')" class ="button"></td>
+            <td><input type="button" value="1" onclick="dis('1')" class ="button"></td>
+            <td><input type="button" value="*" onclick="dis('*')" id = 'op'class ="button"></td>
+          </tr>
+          <tr>
+            <td><input type="button" value="/" onclick="dis('/')" id = 'op' class ="button"></td>
+            <td><input type="button" value="0" onclick="dis('0')" class ="button"></td>
+            <td><input type="button" value="." onclick="dis('.')"  class ="button"></td>
+            <td><input type="button" value="=" onclick="solve()"id = 'op' class ="button"></td>
+          </tr>
+        </tbody>
+    </table>
+          
+    <td><input type='button'id = 'btnx' value = 'CLEAR ALL' onclick="clearScreen() " class="clear" ></button></td>
+          
+        
+</div>   
+</body>
+<script>
+
+    function dis(val){
+    document.getElementById('input').value += val
+    return val
+    }
+    
+    function solve(){
+    let x = document.getElementById('input').value
+    let y = eval(x);
+    document.getElementById('input').value = y
+    return y
+    }
+    function clearScreen(){
+    document.getElementById('input').value = ''
+    }
+
+    
+</script>
+</html>
